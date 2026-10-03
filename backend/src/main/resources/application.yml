@@ -1,0 +1,56 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: portfolio-cms
+
+  # ============================================================
+  # Default profile uses H2 file-based DB so the project runs
+  # out-of-the-box with zero setup in IntelliJ.
+  # Switch to the "postgres" profile (see application-postgres.yml)
+  # for real Postgres usage.
+  # ============================================================
+  profiles:
+    active: h2
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  jackson:
+    default-property-inclusion: non_null
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:your-email@gmail.com}
+    password: ${MAIL_PASSWORD:your-app-password}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:this-is-a-very-long-development-only-jwt-secret-key-change-me-in-prod-1234567890}
+    expiration-ms: ${JWT_EXPIRATION:86400000}          # 24h
+    refresh-expiration-ms: ${JWT_REFRESH_EXPIRATION:604800000}  # 7d
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:3000,http://localhost:5173}
+  upload:
+    dir: ${UPLOAD_DIR:./uploads}
+  admin:
+    default-email: ${ADMIN_EMAIL:admin@portfolio.com}
+    default-password: ${ADMIN_PASSWORD:Admin@123}
+  contact:
+    notify-email: ${CONTACT_NOTIFY_EMAIL:your-email@gmail.com}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
