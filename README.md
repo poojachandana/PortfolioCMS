@@ -17,9 +17,9 @@ portfolio-cms/
 
 | Service | Platform | URL |
 |---|---|---|
-| Backend API | Render | `https://portfoliocms-6j29.onrender.com` |
-| Admin Panel | Vercel | `https://portfolio-cms-theta-gilt.vercel.app` |
-| Public Site | Vercel | `https://portfolio-cms-hsmi.vercel.app` |
+| Backend API | Render | [portfoliocms-6j29.onrender.com](https://portfoliocms-6j29.onrender.com) |
+| Admin Panel | Vercel | [portfolio-cms-theta-gilt.vercel.app](https://portfolio-cms-theta-gilt.vercel.app) |
+| Public Site | Vercel | [portfolio-cms-hsmi.vercel.app](https://portfolio-cms-hsmi.vercel.app) |
 | Database | Neon (Postgres) | — |
 
 > Render's free tier spins down after 15 minutes of inactivity — the first request after idle can take 30–50 seconds to wake up. This is expected.
